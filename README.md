@@ -1,8 +1,5 @@
 # Mushee Yellow Pay Rebuild
 
-A premium rebuild of Yellow Pay with:
-- pre-landing + landing page
-- dedicated wallet page
 - Polygon mainnet wallet connect
 - USDC send flow
 - payment links panel
