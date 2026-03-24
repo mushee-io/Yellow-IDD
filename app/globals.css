@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #fcfbf4;
+  --foreground: #1b1605;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(255, 225, 87, 0.24), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 245, 180, 0.6), transparent 26%),
+    linear-gradient(180deg, #fffef8 0%, #fff9e8 42%, #fffdf7 100%);
+  color: var(--foreground);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(217, 194, 102, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 194, 102, 0.06) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at center, black 28%, transparent 82%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(255, 208, 60, 0.3);
+}
+
+@layer components {
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 60%);
+  }
+
+  .hero-orb {
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 999px;
+    filter: blur(70px);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .hero-orb-left {
+    top: 2rem;
+    left: -8rem;
+    background: radial-gradient(circle, rgba(255, 220, 95, 0.42), transparent 68%);
+  }
+
+  .hero-orb-right {
+    top: 4rem;
+    right: -6rem;
+    background: radial-gradient(circle, rgba(255, 245, 182, 0.8), transparent 68%);
+  }
+
+  .surface-card {
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(228, 203, 118, 0.35);
+    box-shadow:
+      0 30px 80px rgba(91, 74, 15, 0.08),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+
+  .soft-card {
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(227, 207, 133, 0.32);
+    box-shadow: 0 18px 40px rgba(91, 74, 15, 0.06);
+  }
+
+  .nav-shell {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(226, 205, 122, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 18px 48px rgba(91, 74, 15, 0.06);
+  }
+
+  .logo-shell {
+    display: inline-flex;
+    height: 3rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #fff1a8, #ffd84f 50%, #fff7cf);
+    box-shadow: 0 14px 28px rgba(211, 175, 41, 0.28);
+  }
+
+  .logo-mark {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4c3901;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #7b5a00 0%, #c9a10a 45%, #f5d746 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-[#2f2200] transition duration-200;
+    background: linear-gradient(135deg, #f0c419 0%, #ffd84f 52%, #fff0a2 100%);
+    box-shadow: 0 16px 40px rgba(224, 182, 35, 0.26);
+  }
+
+  .button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 48px rgba(224, 182, 35, 0.32);
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition duration-200;
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(227, 207, 133, 0.32);
+    color: #5f4b0d;
+  }
+
+  .button-secondary:hover {
+    background: rgba(255,255,255,0.96);
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium;
+    background: rgba(255, 218, 79, 0.22);
+    color: #8b6500;
+    border: 1px solid rgba(238, 203, 72, 0.4);
+  }
+
+  .nav-link {
+    color: #6f6334;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #2b2208;
+  }
+
+  .input-shell {
+    width: 100%;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(227, 207, 133, 0.4);
+    background: rgba(255,255,255,0.96);
+    padding: 0.9rem 1rem;
+    color: #1b1605;
+    outline: none;
+  }
+
+  .input-shell::placeholder {
+    color: #b4a46d;
+  }
+}
